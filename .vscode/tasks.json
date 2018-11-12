@@ -6,7 +6,7 @@
 		{
 			"label": "Build",
 			"type": "shell",
-			"command": "exec.bat",
+			"command": "run.bat",
 			"group": {
 				"kind": "build",
 				"isDefault": true
