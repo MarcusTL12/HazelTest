@@ -1,14 +1,28 @@
-#include "test.h"
+#include "Hazel.h"
 
-namespace Hazel {
 
-	void Print();
+class Sandbox : public Hazel::Application
+{
+public:
+	Sandbox()
+	{
+		
+	}
 
-}
+	~Sandbox()
+	{
+
+	}
+
+};
 
 
 int main()
 {
-	Hazel::Print();
+	Sandbox* sandbox = new Sandbox();
+
+	sandbox->Run();
+
+	delete sandbox;
 }
 
