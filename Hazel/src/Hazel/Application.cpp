@@ -1,4 +1,3 @@
-#include "stdio.h"
 #include "Application.h"
 
 
@@ -14,7 +13,6 @@ namespace Hazel {
 
 	void Application::Run()
 	{
-		printf("Hallai Hazel!");
 		while (true);
 	}
 
