@@ -2,7 +2,7 @@
 
 #include <memory>
 
-#include "spdlog.h"
+#include "spdlog/spdlog.h"
 
 
 namespace Hazel {
