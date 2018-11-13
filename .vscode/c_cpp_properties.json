@@ -4,8 +4,8 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/*/src/",
-                "${workspaceFolder}/Hazel/vendor/spdlog/include",
-                "${workspaceFolder}/Hazel/vendor/thread"
+                "${workspaceFolder}/Hazel/src/",
+                "${workspaceFolder}/Hazel/vendor/spdlog/include"
             ],
             "defines": [
                 "_DEBUG",
