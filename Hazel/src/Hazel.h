@@ -2,7 +2,8 @@
 
 
 #include "Hazel/Application.h"
-#include "Hazel/Log.h"
+// #include "Hazel/Log.h"
+#include "Hazel/SimpLog.h"
 
 
 // ---Entry Point----------------
