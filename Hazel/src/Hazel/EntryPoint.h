@@ -14,7 +14,7 @@ int main(int argc, char** argv)
 	// HZ_INFO("Hello! Var={0}", a);
 
 	Hazel::Log::Init();
-	HZ_CORE_WARN("Hallais");
+	HZ_CORE_INFO("Welcome To Hazel Engine!");
 
 	auto app = Hazel::CreateApplication();
 	app->Run();

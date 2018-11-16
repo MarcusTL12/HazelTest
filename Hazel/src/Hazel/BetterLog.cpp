@@ -1,3 +1,5 @@
+#ifdef TEMP
+
 #include "BetterLog.h"
 
 #include <memory>
@@ -38,3 +40,4 @@ namespace Hazel {
 
 }
 
+#endif
