@@ -59,6 +59,7 @@
 		"thread": "cpp",
 		"tuple": "cpp",
 		"shared_mutex": "cpp",
-		"variant": "cpp"
+		"variant": "cpp",
+		"string": "cpp"
 	}
 }
