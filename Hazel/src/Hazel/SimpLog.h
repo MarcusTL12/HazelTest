@@ -39,21 +39,21 @@ void MakeArgs(formType* args, int &curIndex)
 }
 
 template <typename T>
-void MakeArgs(formType* args, int &curIndex, T next)
+void MakeArgs(formType* args, int &curIndex, T &next)
 {
-	args[curIndex++] = formType(next);
+	args[curIndex++] = formType(&next);
 }
 
 template <typename T, typename... Ts>
-void MakeArgs(formType* args, int &curIndex, T next, Ts... rest)
+void MakeArgs(formType* args, int &curIndex, T &next, Ts&... rest)
 {
-	args[curIndex++] = formType(next);
+	args[curIndex++] = formType(&next);
 	MakeArgs(args, curIndex, rest...);
 }
 
 
 template <typename... Ts>
-void CallLog(bool core, int level, const char *msg, Ts... args)
+void CallLog(bool core, int level, const char *msg, Ts&... args)
 {
 	int numArgs = sizeof...(args);
 	int curIndex = 0;

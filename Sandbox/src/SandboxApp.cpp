@@ -16,7 +16,7 @@ class Sandbox : public Hazel::Application
 		long long g = 8589934592;
 		float h = 3.14f;
 
-		HZ_CLIENT_WARN("d = {3}, a = {1}, b = {0}, c = {2}, e = {4}, f = {5}, g = {6}, h = {7}", &b, &a, &c, &d, &e, &f, &g, &h);
+		HZ_CLIENT_WARN("d = {3}, a = {1}, b = {0}, c = {2}, e = {4}, f = {5}, g = {6}, h = {7}", b, a, c, d, e, f, g, h);
 
 		HZ_CLIENT_INFO("Setup Succeded!");
 	}
