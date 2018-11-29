@@ -32,28 +32,27 @@ struct formType
 	formType(const char **val) : type(STR), value((void *)(*val)) {}
 };
 
-void Log(bool core, int level, const char* msg, formType* args, int numArgs);
+void Log(bool core, int level, const char *msg, formType *args, int numArgs);
 
-void MakeArgs(formType* args, int &curIndex)
+inline void MakeArgs(formType *args, int &curIndex)
 {
 }
 
 template <typename T>
-void MakeArgs(formType* args, int &curIndex, T &next)
+inline void MakeArgs(formType *args, int &curIndex, T &next)
 {
 	args[curIndex++] = formType(&next);
 }
 
 template <typename T, typename... Ts>
-void MakeArgs(formType* args, int &curIndex, T &next, Ts&... rest)
+inline void MakeArgs(formType *args, int &curIndex, T &next, Ts &... rest)
 {
 	args[curIndex++] = formType(&next);
 	MakeArgs(args, curIndex, rest...);
 }
 
-
 template <typename... Ts>
-void CallLog(bool core, int level, const char *msg, Ts&... args)
+inline void CallLog(bool core, int level, const char *msg, Ts &... args)
 {
 	int numArgs = sizeof...(args);
 	int curIndex = 0;
@@ -74,8 +73,8 @@ void CallLog(bool core, int level, const char *msg, Ts&... args)
 #define HZ_CORE_ERROR(...) ::Hazel::Log::CallLog(true, 4, __VA_ARGS__)
 #define HZ_CORE_FATAL(...) ::Hazel::Log::CallLog(true, 5, __VA_ARGS__)
 
-#define HZ_CLIENT_TRACE(...) ::Hazel::Log::CallLog(false, 0, __VA_ARGS__)
-#define HZ_CLIENT_INFO(...) ::Hazel::Log::CallLog(false, 2, __VA_ARGS__)
-#define HZ_CLIENT_WARN(...) ::Hazel::Log::CallLog(false, 3, __VA_ARGS__)
-#define HZ_CLIENT_ERROR(...) ::Hazel::Log::CallLog(false, 4, __VA_ARGS__)
-#define HZ_CLIENT_FATAL(...) ::Hazel::Log::CallLog(false, 5, __VA_ARGS__)
+#define HZ_TRACE(...) ::Hazel::Log::CallLog(false, 0, __VA_ARGS__)
+#define HZ_INFO(...) ::Hazel::Log::CallLog(false, 2, __VA_ARGS__)
+#define HZ_WARN(...) ::Hazel::Log::CallLog(false, 3, __VA_ARGS__)
+#define HZ_ERROR(...) ::Hazel::Log::CallLog(false, 4, __VA_ARGS__)
+#define HZ_FATAL(...) ::Hazel::Log::CallLog(false, 5, __VA_ARGS__)

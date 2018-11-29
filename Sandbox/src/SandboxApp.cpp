@@ -1,11 +1,12 @@
 #include "Hazel.h"
+#include <vector>
 
 class Sandbox : public Hazel::Application
 {
   public:
 	Sandbox()
 	{
-		HZ_CLIENT_INFO("Welcome To The Sandbox App!");
+		HZ_INFO("Welcome To The Sandbox App!");
 
 		int a = 500;
 		double b = 7.3;
@@ -16,9 +17,9 @@ class Sandbox : public Hazel::Application
 		long long g = 8589934592;
 		float h = 3.14f;
 
-		HZ_CLIENT_WARN("d = {3}, a = {1}, b = {0}, c = {2}, e = {4}, f = {5}, g = {6}, h = {7}", b, a, c, d, e, f, g, h);
+		HZ_WARN("d = {3}, a = {1}, b = {0}, c = {2}, e = {4}, f = {5}, g = {6}, h = {7}", b, a, c, d, e, f, g, h);
 
-		HZ_CLIENT_INFO("Setup Succeded!");
+		HZ_INFO("Setup Succeded!");
 	}
 
 	~Sandbox()
